@@ -1,1 +1,1 @@
-# Blockchai Social Media
+# Blockchain Social Media
