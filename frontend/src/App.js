@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import { Layout } from "antd";
+import "antd/dist/antd.css";
+import "./style.css";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
@@ -43,6 +45,7 @@ const styles = {
 function App() {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
     useMoralis();
+  console.log(isAuthenticated);
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
