@@ -8,6 +8,7 @@ import { SelectOutlined } from "@ant-design/icons";
 import { getExplorer } from "../../helpers/networks";
 import Text from "antd/lib/typography/Text";
 import { connectors } from "./config";
+import { Redirect } from "react-router";
 const styles = {
   account: {
     height: "42px",
@@ -92,6 +93,7 @@ function Account() {
                     await authenticate({ provider: connectorId });
                     window.localStorage.setItem("connectorId", connectorId);
                     setIsAuthModalVisible(false);
+                    <Redirect to="/" />;
                   } catch (e) {
                     console.error(e);
                   }

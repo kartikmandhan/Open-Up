@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 import Account from "./components/Account/Account";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import { Layout } from "antd";
 import "antd/dist/antd.css";
@@ -75,20 +70,17 @@ function App() {
               </Route>
             </>
           ) : (
-            <>
-              <Redirect to="/nonauthenticated" />
-              <Route path="/nonauthenticated">
-                <Header style={styles.header}>
-                  <h4>OPEN-UP</h4>
-                  <div style={styles.headerRight}>
-                    <Account />
-                  </div>
-                </Header>
-                <div style={styles.content}>
-                  <h3>Please login using the "Authenticate" button</h3>
+            <Route path="/">
+              <Header style={styles.header}>
+                <h4>OPEN-UP</h4>
+                <div style={styles.headerRight}>
+                  <Account />
                 </div>
-              </Route>
-            </>
+              </Header>
+              <div style={styles.content}>
+                <h3>Please login using the "Authenticate" button</h3>
+              </div>
+            </Route>
           )}
         </Switch>
       </Router>

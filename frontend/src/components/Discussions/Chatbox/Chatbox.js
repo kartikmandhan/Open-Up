@@ -1,11 +1,33 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useMoralis } from "react-moralis";
 import Blockie from "../../Blockie";
 import "./Chatbox.css";
 import ChatMessage from "./ChatMessage";
 function Chatbox({ messages }) {
-  const [input, setInput] = useState("");
+  const [message, setMessage] = useState("");
+  const { user, Moralis } = useMoralis();
+  const endOfMessagesRef = useRef(null);
   const sendMessage = async (event) => {
-    console.log("message sent");
+    if (!message) return;
+
+    const Messages = Moralis.Object.extend("Messages");
+    const messages = new Messages();
+    messages
+      .save({
+        message: message,
+        username: user.getUsername(),
+        ethAddress: user.get("ethAddress"),
+      })
+      .then(
+        (message) => {
+          console.log("message sent", message);
+        },
+        (error) => {
+          console.log(error.message);
+        }
+      );
+    endOfMessagesRef.current.scrollIntoView({ behavior: "smooth" });
+    setMessage("");
   };
   return (
     <div className="chatbox">
@@ -21,29 +43,31 @@ function Chatbox({ messages }) {
           return (
             <ChatMessage
               key={index}
-              name={message.name}
-              isReciever={message.received}
-              message={message.message}
-              timestamp={message.timestamp}
+              name={message.get("username")}
+              isReciever={message.get("ethAddress") === user.get("ethAddress")}
+              message={message.get("message")}
+              timestamp={message.createdAt}
             />
           );
         })}
+        <div ref={endOfMessagesRef} className="text-center text-secondary mt-5">
+          <p style={{ fontSize: "11px" }}>
+            You are up to date {user.getUsername()}{" "}
+          </p>
+        </div>
       </div>
       <div className="chatFooter">
         {/* <IconButton>
           <InsertEmoticonIcon /> */}
         {/* </IconButton> */}
-        <form>
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type a message"
-            type="text"
-          />
-          <button onClick={sendMessage} type="submit"></button>
-        </form>
+        <input
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Type a message"
+          type="text"
+        />
         <div
-          className="m-3"
+          className="icon"
           style={{ cursor: "pointer" }}
           onClick={sendMessage}
         >

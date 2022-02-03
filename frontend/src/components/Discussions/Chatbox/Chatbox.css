@@ -45,17 +45,15 @@
   flex: 1;
   display: flex;
 }
-.chatFooter > form > input {
+.chatFooter > input {
   flex: 1;
   border-radius: 20px;
   padding: 10px;
   outline-width: 0;
   border: none;
 }
-.chatFooter > form > button {
-  display: none;
-}
-.chatFooter > .MuiSvgIcon-root {
+
+.chatFooter > .icon {
   padding: 10px;
   color: gray;
 }
