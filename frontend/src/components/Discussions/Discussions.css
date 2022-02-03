@@ -1,13 +1,17 @@
 .discussionContainer {
   display: flex;
   /* justify-content: center; */
-  background-color: #dadbd3;
+  background-color: #c04311;
 }
 .discussionInnerContainer {
-  display: flex;
-  background-color: #ededed;
+  display: flex;  
+  background: #0b0e2a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #195992, #121424);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0e1e2c, #0a0d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  
 }
+
+
