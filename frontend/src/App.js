@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import Account from "./components/Account/Account";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import { Layout } from "antd";
 import "antd/dist/antd.css";
 import "./style.css";
+import Discussions from "./components/Discussions/Discussions";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
@@ -45,7 +41,6 @@ const styles = {
 function App() {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
     useMoralis();
-  console.log(isAuthenticated);
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
@@ -56,31 +51,32 @@ function App() {
   return (
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
-        <Header style={styles.header}>
-          <h4>POST-NOW</h4>
-          <div style={styles.headerRight}>
-            <Account />
-          </div>
-        </Header>
-
-        <div style={styles.content}>
-          <Switch>
-            <Route path="/main">
-              <h1>Log in successfull</h1>
-            </Route>
+        <Switch>
+          {isAuthenticated ? (
+            <>
+              <Route path="/" exact>
+                <Header style={styles.header}>
+                  <h4>OPEN-UP</h4>
+                  <div style={styles.headerRight}>
+                    <Account />
+                  </div>
+                </Header>
+                <div style={styles.content}>
+                  <h1 className="mt-5">Log in successfull</h1>
+                </div>
+              </Route>
+              <Route path="/discussions" exact>
+                <Discussions />
+              </Route>
+            </>
+          ) : (
             <Route path="/nonauthenticated">
               <h3>Please login using the "Authenticate" button</h3>
             </Route>
-          </Switch>
-          {isAuthenticated ? (
-            <Redirect to="/main" />
-          ) : (
-            <Redirect to="/nonauthenticated" />
           )}
-        </div>
+        </Switch>
       </Router>
       <Footer style={{ textAlign: "center" }}>
-        {" "}
         Copyright 111903039 111903023
       </Footer>
     </Layout>
