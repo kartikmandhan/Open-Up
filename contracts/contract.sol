@@ -42,6 +42,7 @@ contract OpenUP {
         bytes32 _categoryId
     ) external {
         address _owner = msg.sender;
+        // Keccak256 is a cryptographic function built into solidity. This function takes in any amount of inputs and converts it to a unique 32 byte hash.
         bytes32 _contentId = keccak256(abi.encode(_contentUri));
         bytes32 _postId = keccak256(
             abi.encodePacked(_owner, _parentId, _contentId)
