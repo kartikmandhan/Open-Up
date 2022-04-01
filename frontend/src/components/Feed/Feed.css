@@ -71,3 +71,30 @@
   background: #1d9bf0;
   color: white;
 }
+
+.outerwrapper{
+  overflow-y: scroll; 
+  border-right-width: 1px; 
+  border-left-width: 1px; 
+  border:#38444d
+}
+
+.header{
+  display: flex; 
+  position: sticky; 
+  top: 0; 
+  z-index: 10; 
+  padding: 1rem; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background: #15202b;
+
+}
+
+.headerTitle{
+  font-size: 1.25rem;
+  line-height: 1.75rem; 
+  font-weight: 700; 
+
+}
