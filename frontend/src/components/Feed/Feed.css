@@ -72,7 +72,8 @@
   color: white;
 }
 
-.outerwrapper{
+.outerWrapper{
+  flex:2;
   overflow-y: scroll; 
   border-right-width: 1px; 
   border-left-width: 1px; 
@@ -97,4 +98,69 @@
   line-height: 1.75rem; 
   font-weight: 700; 
 
+}
+
+.postWrapper{
+  display: flex; 
+  padding: 0.75rem; 
+  display: flex; 
+  border-bottom-width: 1px; 
+  border-color: #38444d;
+}
+
+.profileImage{
+  border-radius: 9999px; 
+  height: 40px;
+  width: 40px;
+  object-fit: cover; 
+}
+
+.postMain{
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  flex: 1 1 0%; 
+}
+
+.headerDetails{
+  display: flex; 
+  align-items: center; 
+}
+
+.name{
+  margin-right: 0.25rem; 
+font-weight: 700; 
+}
+
+.verified{
+  font-size: 0.8rem;
+}
+
+.handleAndTimeAgo{
+  color:#8899a6;
+  margin-left: 0.25rem; 
+}
+
+.post{
+  margin-top: 0.5rem;
+margin-bottom: 0.5rem; 
+}
+
+.image{
+  border-radius: 1.5rem; 
+}
+
+.footer{
+  display: flex; 
+margin-top: 1rem; 
+margin-right: 7rem; 
+display: flex; 
+justify-content: space-between; 
+color: #8899a6;
+}
+
+.footerIcon{
+  padding: 0.5rem; 
+font-size: 1.125rem;
+line-height: 1.75rem; 
+border-radius: 9999px; 
 }
