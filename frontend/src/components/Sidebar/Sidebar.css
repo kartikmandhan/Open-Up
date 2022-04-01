@@ -1,0 +1,84 @@
+.wrapper{
+    flex:0.7;
+    display: flex; 
+padding-left: 2rem;
+padding-right: 2rem; 
+flex-direction: column; 
+}
+
+.iconContainer{
+    margin: 1rem; 
+font-size: 1.875rem;
+line-height: 2.25rem; 
+}
+
+.Button{
+    background-color: #1d9bf0;
+    display: flex; 
+font-weight: 700; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+border-radius: 1.5rem; 
+cursor: pointer; 
+}
+.Button:hover{
+background-color:#1b8cd8 ;
+}
+
+.navContainer{
+    flex: 1 1 0%; 
+
+}
+
+.profileButton{
+    display: flex; 
+margin-bottom: 1.5rem; 
+display: flex; 
+align-items: center; 
+cursor: pointer; 
+padding: 0.5rem; 
+
+}
+.profileButton:hover{
+    background-color:#333c45 ;
+    }
+
+.profileLeft{
+    display: flex; 
+margin-right: 1rem; 
+display: flex; 
+justify-content: center; 
+
+}
+
+.profileImage{
+    width: 3rem; 
+border-radius: 9999px; 
+}
+
+.profileRight{
+    display: flex; 
+display: flex; 
+flex: 1 1 0%; 
+}
+
+.details{
+    flex:1;
+}
+
+.name{
+    font-size: 1.125rem;
+line-height: 1.75rem; 
+}
+
+.handle{
+    color:#8899a6
+}
+
+.moreContainer{
+    display: flex; 
+    margin-right: 0.5rem; 
+    display: flex; 
+    align-items: center; 
+}
