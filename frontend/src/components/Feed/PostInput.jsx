@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-// import { BsCardImage, BsEmojiSmile } from "react-icons/bs";
-// import { RiFileGifLine, RiBarChartHorizontalFill } from "react-icons/ri";
-// import { IoMdCalendar } from "react-icons/io";
-// import { MdOutlineLocationOn } from "react-icons/md";
+import { BsCardImage, BsEmojiSmile } from "react-icons/bs";
+import { RiFileGifLine, RiBarChartHorizontalFill } from "react-icons/ri";
+import { IoMdCalendar } from "react-icons/io";
+import { MdOutlineLocationOn } from "react-icons/md";
 import Blockie from "../Blockie";
 import "./Feed.css";
 import { message } from "antd";
@@ -93,14 +93,14 @@ function PostInput() {
             onChange={(e) => setContent(e.target.value)}
           />
           <div className="formLowerContainer">
-            {/* <div className="iconsContainer">
+            <div className="iconsContainer">
               <BsCardImage className="icon" />
               <RiFileGifLine className="icon" />
               <RiBarChartHorizontalFill className="icon" />
               <BsEmojiSmile className="icon" />
               <IoMdCalendar className="icon" />
               <MdOutlineLocationOn className="icon" />
-            </div> */}
+            </div>
             <button
               type="submit"
               className={`submitGeneral ${
