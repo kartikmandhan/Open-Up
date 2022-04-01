@@ -37,6 +37,14 @@ const styles = {
     fontSize: "15px",
     fontWeight: "600",
   },
+  wrapper: {
+    display: "flex",
+    justifyContent: "center",
+    width: "100vw",
+    userSelect: "none",
+    backgroundColor: "#15202b",
+    color: "white",
+  },
 };
 
 function App() {
@@ -56,13 +64,13 @@ function App() {
           {isAuthenticated ? (
             <>
               <Route path="/" exact>
-                <Header style={styles.header}>
+                {/* <Header style={styles.header}>
                   <h4>OPEN-UP</h4>
                   <div style={styles.headerRight}>
                     <Account />
                   </div>
-                </Header>
-                <div style={styles.content}>
+                </Header> */}
+                <div style={styles.wrapper}>
                   <Main />
                 </div>
               </Route>
@@ -81,13 +89,13 @@ function App() {
               <div style={styles.content}>
                 <h3>Please login using the "Authenticate" button</h3>
               </div>
+              <Footer style={{ textAlign: "center" }}>
+                Copyright 111903039 111903023
+              </Footer>
             </Route>
           )}
         </Switch>
       </Router>
-      <Footer style={{ textAlign: "center" }}>
-        Copyright 111903039 111903023
-      </Footer>
     </Layout>
   );
 }

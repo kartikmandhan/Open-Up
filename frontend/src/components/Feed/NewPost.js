@@ -1,7 +1,11 @@
-import { Avatar, Comment, Divider, message, Tooltip } from "antd";
-import Text from "antd/lib/typography/Text";
-import Blockie from "../Blockie";
 import React, { useEffect, useState } from "react";
+import { BsFillPatchCheckFill } from "react-icons/bs";
+import { FaRegComment, FaRetweet } from "react-icons/fa";
+import { AiOutlineHeart } from "react-icons/ai";
+import { FiShare } from "react-icons/fi";
+import { format } from "timeago.js";
+import "./Feed.css";
+import Blockie from "../Blockie";
 import { useWeb3ExecuteFunction, useMoralisQuery } from "react-moralis";
 import { useMoralis } from "react-moralis";
 import {
@@ -10,7 +14,9 @@ import {
   DislikeFilled,
   LikeFilled,
 } from "@ant-design/icons";
-const Post = ({ post }) => {
+import { Comment, message, Tooltip } from "antd";
+function Post({ post }) {
+  const isProfileImageNft = false;
   const [postContent, setPostContent] = useState({
     title: "",
     content: "",
@@ -72,14 +78,13 @@ const Post = ({ post }) => {
           display: "flex",
           alignItems: "center",
           marginRight: "16px",
-          color: "#eee",
         }}
         onClick={() => vote("voteUp")}
       >
-        {voteStatus === 1 ? <LikeFilled /> : <LikeOutlined />}
+        {voteStatus === 1 ? <LikeFilled /> : <LikeOutlined />} Vote Up
       </span>
     </Tooltip>,
-    <span style={{ fontSize: "15px", color: "#eee" }}>
+    <span style={{ fontSize: "15px" }}>
       0 {/* <Votes postId={postId} /> */}
     </span>,
     <Tooltip key="comment-basic-dislike" title="Vote Down">
@@ -89,49 +94,50 @@ const Post = ({ post }) => {
           display: "flex",
           alignItems: "center",
           marginLeft: "8px",
-          color: "#eee",
         }}
         onClick={() => vote("voteDown")}
       >
-        {voteStatus === -1 ? <DislikeFilled /> : <DislikeOutlined />}
+        {voteStatus === -1 ? <DislikeFilled /> : <DislikeOutlined />} Vote Down
       </span>
     </Tooltip>,
   ];
   return (
-    <Comment
-      style={{
-        boxShadow: "0 0.2rem 0.2rem rgb(189 197 209 / 20%)",
-        backgroundColor: "#15202b",
-        border: "1px solid #38444d",
-        borderRadius: "0.5rem",
-        fontSize: "16px",
-        color: "#ffffff",
-        padding: "0px 15px",
-        marginBottom: "10px",
-        marginTop: "10px",
-      }}
-      actions={actions}
-      author={
-        <Text style={{ color: "#777" }} strong>
-          {postOwner}
-        </Text>
-      }
-      avatar={
-        <Avatar src={<Blockie address={postOwner} number={4} />}></Avatar>
-      }
-      content={
-        <>
-          <Text strong style={{ fontSize: "20px", color: "#fff" }}>
-            {postContent["title"]}
-          </Text>
-          <p style={{ fontSize: "15px", color: "#ccc" }}>
-            {postContent["content"]}
-          </p>
-          <Divider style={{ margin: "15px 0" }} />
-        </>
-      }
-    />
+    <div className="postWrapper">
+      <div className="">
+        <Blockie address={postOwner} number={4} />
+      </div>
+      <div className="postMain">
+        <div className="">
+          <span className="headerDetails">
+            {/* <span className="name">{displayName}</span> */}
+            {isProfileImageNft && (
+              <span className="verified">
+                <BsFillPatchCheckFill />
+              </span>
+            )}
+            <span className="handleAndTimeAgo">
+              @{postOwner} • {format(new Date(timestamp).getTime())}
+            </span>
+          </span>
+          <div className="post">{postContent["content"]}</div>
+        </div>
+        <div className="footer">
+          <div className={`footerIcon hover:bg-[#1e364a] hover:text-[#1d9bf0]`}>
+            <FaRegComment />
+          </div>
+          <div className={`footerIcon hover:bg-[#1b393b] hover:text-[#03ba7c]`}>
+            <FaRetweet />
+          </div>
+          <div className={`footerIcon hover:bg-[#39243c] hover:text-[#f91c80]`}>
+            <AiOutlineHeart />
+          </div>
+          <div className={`footerIcon hover:bg-[#1e364a] hover:text-[#1d9bf0]`}>
+            <FiShare />
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
 export default Post;

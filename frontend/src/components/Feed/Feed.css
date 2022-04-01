@@ -34,7 +34,7 @@
   border-top: 0;
   border-left: 0;
   border-right: 0;
-
+  color: #eee;
   border-color: #eee;
 }
 
@@ -72,95 +72,93 @@
   color: white;
 }
 
-.outerWrapper{
-  flex:2;
-  overflow-y: scroll; 
-  border-right-width: 1px; 
-  border-left-width: 1px; 
-  border:#38444d
+.outerWrapper {
+  flex: 2;
+  overflow-y: scroll;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border: #38444d;
 }
 
-.header{
-  display: flex; 
-  position: sticky; 
-  top: 0; 
-  z-index: 10; 
-  padding: 1rem; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
+.header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #15202b;
-
 }
 
-.headerTitle{
+.headerTitle {
   font-size: 1.25rem;
-  line-height: 1.75rem; 
-  font-weight: 700; 
-
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
-.postWrapper{
-  display: flex; 
-  padding: 0.75rem; 
-  display: flex; 
-  border-bottom-width: 1px; 
+.postWrapper {
+  display: flex;
+  padding: 0.75rem;
+  display: flex;
+  border-bottom-width: 1px;
   border-color: #38444d;
 }
 
-.profileImage{
-  border-radius: 9999px; 
+.profileImage {
+  border-radius: 50%;
   height: 40px;
   width: 40px;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.postMain{
+.postMain {
   padding-left: 1rem;
-  padding-right: 1rem; 
-  flex: 1 1 0%; 
+  padding-right: 1rem;
+  flex: 1 1 0%;
 }
 
-.headerDetails{
-  display: flex; 
-  align-items: center; 
+.headerDetails {
+  display: flex;
+  align-items: center;
 }
 
-.name{
-  margin-right: 0.25rem; 
-font-weight: 700; 
+.name {
+  margin-right: 0.25rem;
+  font-weight: 700;
 }
 
-.verified{
+.verified {
   font-size: 0.8rem;
 }
 
-.handleAndTimeAgo{
-  color:#8899a6;
-  margin-left: 0.25rem; 
+.handleAndTimeAgo {
+  color: #8899a6;
+  margin-left: 0.25rem;
 }
 
-.post{
+.post {
   margin-top: 0.5rem;
-margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
 }
 
-.image{
-  border-radius: 1.5rem; 
+.image {
+  border-radius: 1.5rem;
 }
 
-.footer{
-  display: flex; 
-margin-top: 1rem; 
-margin-right: 7rem; 
-display: flex; 
-justify-content: space-between; 
-color: #8899a6;
+.footer {
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 7rem;
+  display: flex;
+  justify-content: space-between;
+  color: #8899a6;
 }
 
-.footerIcon{
-  padding: 0.5rem; 
-font-size: 1.125rem;
-line-height: 1.75rem; 
-border-radius: 9999px; 
+.footerIcon {
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  border-radius: 9999px;
 }
