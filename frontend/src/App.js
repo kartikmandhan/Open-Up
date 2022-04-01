@@ -6,6 +6,7 @@ import { Layout } from "antd";
 import "antd/dist/antd.css";
 import "./style.css";
 import Discussions from "./components/Discussions/Discussions";
+import Main from "./components/Main";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
@@ -62,7 +63,7 @@ function App() {
                   </div>
                 </Header>
                 <div style={styles.content}>
-                  <h1 className="mt-5">Log in successfull</h1>
+                  <Main />
                 </div>
               </Route>
               <Route path="/discussions" exact>
