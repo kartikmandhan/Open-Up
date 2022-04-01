@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Avatar, Button } from "antd";
 import Blockie from "../Blockie";
 import AddPost from "./AddPost";
+import PostInput from "./PostInput";
 import Posts from "./Posts";
 const Feed = () => {
   const { selectedCategory } = useContext(SocialContext);
@@ -40,7 +41,7 @@ const Feed = () => {
             </Button>
           </div>
 
-          {addPostVisible && <AddPost />}
+          {addPostVisible && <PostInput />}
           <Posts />
         </>
       )}
