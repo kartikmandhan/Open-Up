@@ -82,3 +82,33 @@ line-height: 1.75rem;
     display: flex; 
     align-items: center; 
 }
+
+.innerWrapper{
+padding: 1rem; 
+transition-property: all; 
+display: flex; 
+align-items: center; 
+width: min-content; 
+cursor: pointer; 
+border-radius: 100px;
+}
+
+.innerWrapper:hover{
+    background-color:#33cc45;
+    transition-duration: 200;
+    transition-timing-function: ease-in-out;
+}
+
+.iconContainer{
+    margin-right: 1rem; 
+font-size: 1.25rem;
+line-height: 1.75rem; 
+}
+
+.textGeneral{
+    font:medium;
+}
+
+.textActive{
+    font:bold;
+}
