@@ -44,6 +44,7 @@ const styles = {
     userSelect: "none",
     backgroundColor: "#15202b",
     color: "white",
+    height: "100%",
   },
 };
 
