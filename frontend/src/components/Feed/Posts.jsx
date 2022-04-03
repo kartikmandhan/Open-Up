@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useMoralisQuery } from "react-moralis";
 import { SocialContext } from "../../context/SocialContext";
 import Post from "./Post";
+
 const Posts = () => {
   const { selectedCategory } = useContext(SocialContext);
   const queryPost = useMoralisQuery(

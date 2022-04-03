@@ -26,7 +26,7 @@ const AddPost = () => {
 
   async function uploadPost(post) {
     const contentURI = await processContent(post);
-    console.log(contentURI);
+    // console.log(contentURI);
     const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
     const options = {
       contractAddress: contractAddress,

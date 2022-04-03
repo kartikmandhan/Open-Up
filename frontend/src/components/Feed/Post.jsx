@@ -4,13 +4,18 @@ import Blockie from "../Blockie";
 import React, { useEffect, useState } from "react";
 import { useWeb3ExecuteFunction, useMoralisQuery } from "react-moralis";
 import { useMoralis } from "react-moralis";
+import { FaRegComment } from "react-icons/fa";
 import {
   DislikeOutlined,
   LikeOutlined,
   DislikeFilled,
   LikeFilled,
 } from "@ant-design/icons";
+import Votes from "./Votes";
+import abi from "../../context/myABI.json";
 const Post = ({ post }) => {
+  const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+  const contractProcessor = useWeb3ExecuteFunction();
   const [postContent, setPostContent] = useState({
     title: "",
     content: "",
@@ -62,7 +67,23 @@ const Post = ({ post }) => {
     }
   }, [data]);
   async function vote(direction) {
-    message.success(direction);
+    if (account.toLowerCase() === postOwner.toLowerCase())
+      return message.error("You cannot vote on your own Post");
+    if (voteStatus) return message.error("Already voted");
+    const options = {
+      contractAddress: contractAddress,
+      functionName: direction,
+      abi: abi,
+      params: {
+        _postId: post["postId"],
+        [direction === "voteDown" ? "_reputationTaken" : "_reputationAdded"]: 1,
+      },
+    };
+    await contractProcessor.fetch({
+      params: options,
+      onSuccess: () => message.success(direction),
+      onError: (error) => console.error(error),
+    });
   }
   const actions = [
     <Tooltip key="comment-basic-like" title="Vote Up">
@@ -80,7 +101,7 @@ const Post = ({ post }) => {
       </span>
     </Tooltip>,
     <span style={{ fontSize: "15px", color: "#eee" }}>
-      0 {/* <Votes postId={postId} /> */}
+      <Votes postId={postId} />
     </span>,
     <Tooltip key="comment-basic-dislike" title="Vote Down">
       <span
@@ -94,6 +115,20 @@ const Post = ({ post }) => {
         onClick={() => vote("voteDown")}
       >
         {voteStatus === -1 ? <DislikeFilled /> : <DislikeOutlined />}
+      </span>
+    </Tooltip>,
+    <Tooltip key="comment-basic-comment" title="Comment">
+      <span
+        style={{
+          fontSize: "15px",
+          display: "flex",
+          alignItems: "center",
+          marginLeft: "8px",
+          color: "#eee",
+        }}
+        onClick={() => vote("Comment")}
+      >
+        <FaRegComment />
       </span>
     </Tooltip>,
   ];
