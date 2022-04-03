@@ -31,6 +31,7 @@ function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
             isActive={Boolean(selected === category.category)}
             setSelected={setSelected}
             selectCategory={selectCategory}
+            redirect={"/"}
           />
         ))}
         <SidebarOption
