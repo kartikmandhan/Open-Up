@@ -31,7 +31,7 @@ function PostInput() {
 
   async function uploadPost(post) {
     const contentURI = await processContent(post);
-    console.log(contentURI);
+    // console.log(contentURI);
     const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
     const options = {
       contractAddress: contractAddress,
@@ -43,7 +43,7 @@ function PostInput() {
         _categoryId: selectedCategory.categoryId,
       },
     };
-    console.log(options);
+    // console.log(options);
     await contractProcessor.fetch({
       params: options,
       onSuccess: () => message.success("success"),

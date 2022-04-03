@@ -20,7 +20,7 @@ function Chatbox({ messages }) {
       })
       .then(
         (message) => {
-          console.log("message sent", message);
+          // console.log("message sent", message);
         },
         (error) => {
           console.log(error.message);

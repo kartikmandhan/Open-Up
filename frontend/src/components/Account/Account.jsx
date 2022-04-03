@@ -18,7 +18,7 @@ const styles = {
     alignItems: "center",
     width: "fit-content",
     borderRadius: "12px",
-    backgroundColor: "rgb(244, 244, 244)",
+    backgroundColor: "",
     cursor: "pointer",
   },
   text: {
@@ -68,6 +68,8 @@ function Account() {
             padding: "15px",
             fontSize: "17px",
             fontWeight: "500",
+            color: "white",
+            backgroundColor: "#15202B",
           }}
           style={{ fontSize: "16px", fontWeight: "500" }}
           width="340px"
@@ -79,6 +81,8 @@ function Account() {
               justifyContent: "center",
               fontWeight: "700",
               fontSize: "20px",
+              color: "white",
+              backgroundColor: "#15202B",
             }}
           >
             Connect Wallet
@@ -141,6 +145,8 @@ function Account() {
           padding: "15px",
           fontSize: "17px",
           fontWeight: "500",
+          color: "white",
+          backgroundColor: "#15202B",
         }}
         style={{ fontSize: "16px", fontWeight: "500" }}
         width="400px"
@@ -150,6 +156,9 @@ function Account() {
           style={{
             marginTop: "10px",
             borderRadius: "1rem",
+            color: "white",
+            backgroundColor: "#15202B",
+            borderColor: "#777",
           }}
           bodyStyle={{ padding: "15px" }}
         >

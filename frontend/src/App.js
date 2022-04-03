@@ -44,7 +44,6 @@ const styles = {
     userSelect: "none",
     backgroundColor: "#15202b",
     color: "white",
-    height: "100%",
   },
 };
 
@@ -59,7 +58,7 @@ function App() {
   }, [isAuthenticated, isWeb3Enabled]);
   console.log(isAuthenticated);
   return (
-    <Layout style={{ height: "100vh", overflow: "auto" }}>
+    <Layout style={{ height: "100%", overflow: "auto" }}>
       <Router>
         <Switch>
           {isAuthenticated ? (

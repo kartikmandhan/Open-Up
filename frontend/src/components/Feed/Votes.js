@@ -26,7 +26,7 @@ function Votes({ postId }) {
     async function getPostVotes() {
       await Moralis.enableWeb3();
       const result = await Moralis.executeFunction(options);
-      console.log("results", result);
+      //   console.log("results", result);
       setPostVotes(result[3]);
     }
     getPostVotes();
