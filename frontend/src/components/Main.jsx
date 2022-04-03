@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { useMoralisQuery } from "react-moralis";
 import Categories from "./Categories";
 import { Feed } from "./Feed";
+import Sidebar from "./Sidebar/Sidebar";
 const Main = () => {
   const queryCategories = useMoralisQuery("Categories");
   const fetchedCategories = JSON.parse(
@@ -22,7 +23,7 @@ const Main = () => {
           gap: "20px",
         }}
       >
-        <Categories categories={fetchedCategories} />
+        <Sidebar categories={fetchedCategories} />
         <Feed />
       </div>
     </div>
