@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useWeb3ExecuteFunction, useMoralisQuery } from "react-moralis";
 import { useMoralis } from "react-moralis";
 import { FaRegComment } from "react-icons/fa";
+import { useHistory } from "react-router";
 import {
   DislikeOutlined,
   LikeOutlined,
@@ -13,7 +14,8 @@ import {
 } from "@ant-design/icons";
 import Votes from "./Votes";
 import abi from "../../context/myABI.json";
-const Post = ({ post }) => {
+const Post = ({ post, commentIconVisible }) => {
+  const history = useHistory();
   const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
   const contractProcessor = useWeb3ExecuteFunction();
   const [postContent, setPostContent] = useState({
@@ -117,20 +119,24 @@ const Post = ({ post }) => {
         {voteStatus === -1 ? <DislikeFilled /> : <DislikeOutlined />}
       </span>
     </Tooltip>,
-    <Tooltip key="comment-basic-comment" title="Comment">
-      <span
-        style={{
-          fontSize: "15px",
-          display: "flex",
-          alignItems: "center",
-          marginLeft: "8px",
-          color: "#eee",
-        }}
-        onClick={() => vote("Comment")}
-      >
-        <FaRegComment />
-      </span>
-    </Tooltip>,
+    commentIconVisible && (
+      <Tooltip key="comment-basic-comment" title="Comment">
+        <span
+          style={{
+            fontSize: "15px",
+            display: "flex",
+            alignItems: "center",
+            marginLeft: "8px",
+            color: "#eee",
+          }}
+          onClick={() =>
+            history.push({ pathname: `/post/${postId}`, state: post })
+          }
+        >
+          <FaRegComment />
+        </span>
+      </Tooltip>
+    ),
   ];
   return (
     <Comment

@@ -23,7 +23,9 @@ const Posts = () => {
   return (
     <div>
       {fetchedPosts.length > 0 ? (
-        fetchedPosts.map((post) => <Post key={post.postId} post={post} />)
+        fetchedPosts.map((post) => (
+          <Post key={post.postId} post={post} commentIconVisible={true} />
+        ))
       ) : (
         <EmptyPost />
       )}

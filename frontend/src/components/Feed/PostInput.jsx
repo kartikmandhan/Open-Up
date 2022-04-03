@@ -10,7 +10,7 @@ import { useMoralisFile } from "react-moralis";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import abi from "../../context/myABI.json";
 import { SocialContext } from "../../context/SocialContext";
-function PostInput() {
+function PostInput({ parentId = "0x91" }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { selectedCategory } = useContext(SocialContext);
@@ -38,7 +38,7 @@ function PostInput() {
       functionName: "createPost",
       abi: abi,
       params: {
-        _parentId: "0x91",
+        _parentId: parentId,
         _contentUri: contentURI,
         _categoryId: selectedCategory.categoryId,
       },

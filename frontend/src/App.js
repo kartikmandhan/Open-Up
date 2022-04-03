@@ -7,6 +7,7 @@ import "antd/dist/antd.css";
 import "./style.css";
 import Discussions from "./components/Discussions/Discussions";
 import Main from "./components/Main";
+import CommentPage from "./components/CommentPage";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
@@ -77,6 +78,15 @@ function App() {
               <Route path="/discussions" exact>
                 <Discussions />
               </Route>
+              <Route
+                path="/post/:postId"
+                exact
+                component={(props) => (
+                  <div style={styles.wrapper}>
+                    <CommentPage {...props} />
+                  </div>
+                )}
+              />
             </>
           ) : (
             <Route path="/">
