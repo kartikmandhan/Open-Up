@@ -23,13 +23,13 @@
   font-weight: 500;
   padding: 6px;
   text-shadow: 3px 3px #0a0d3d1f;
-  background-color: #07073a;
-  background: linear-gradient(to left, #0e2944, #010627); 
+  background-color: #1E3485;
+  /* background: linear-gradient(to left, #0e2944, #010627);  */
   border-radius: 20px;
   border-style: solid;
   text-align: center;
-  border-color: #0c0c42ed;
-  color: #07276df6;
+  border-color: #373794ed;
+  color: #fff;
 }
 
 .chatHeaderInfo > p {
@@ -37,7 +37,7 @@
 }
 
 .chatBody {
-  background-color: #060a1198;
+  background-color: #1A2e74;
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
@@ -64,8 +64,8 @@
   border-radius: 20px;
   padding: 10px;
   outline-width: 0;
-  background-color:#07073a;
-  color: #cecaca;
+  background-color:#333c45;
+  color: #fff;
   
 }
 
