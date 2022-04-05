@@ -1,130 +1,130 @@
-.wrapper{
-    border-bottom-width: 1px; 
-    color:#38444d;
+.wrapper {
+  border-bottom-width: 1px;
+  color: #38444d;
 }
 
-.header{
-    display: flex; 
-padding-top: 0.25rem;
-padding-bottom: 0.25rem; 
-padding-left: 0.75rem;
-padding-right: 0.75rem; 
-margin-top: 0.5rem; 
-display: flex; 
-align-items: center; 
+.header {
+  display: flex;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-.primary{
-    background-color: transparent; 
-font-weight: 700; 
-outline: 0; 
+.primary {
+  background-color: transparent;
+  font-weight: 700;
+  outline: 0;
 }
 
-.secondary{
-    font-size: 0.75rem;
-line-height: 1rem; 
-color:#8899a6;
+.secondary {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #8899a6;
 }
 
-.backButton{
-    margin-right: 0.5rem; 
-font-size: 1.875rem;
-line-height: 2.25rem; 
-border-radius: 9999px; 
-cursor: pointer;
+.backButton {
+  margin-right: 0.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
 }
 
-.backButton:hover{
-    padding: 0.25rem;
-    background-color: #313b44;
+.backButton:hover {
+  padding: 0.25rem;
+  background-color: #313b44;
 }
 
-.coverPhotoContainer{
-overflow: hidden; 
-display: flex; 
-justify-content: center; 
-align-items: center;
-height: 15vh; 
+.coverPhotoContainer {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
 }
 
-.coverPhoto{
-    object-fit: cover; 
-width: 100%; 
-height: 100%; 
+.coverPhoto {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.profileImageContainer{
-padding-left: 0.75rem;
-padding-right: 0.75rem; 
-margin-bottom: 0.5rem; 
-display: flex; 
-height:6rem;
-margin-top: -3rem;
-justify-content: flex-start; 
-justify-content: space-between; 
-align-items: center; 
-width: 100%; 
-border-radius: 9999px; 
+.profileImageContainer {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  height: 6rem;
+  margin-top: -3rem;
+  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 9999px;
 }
 
-.profileImage{
-    object-fit: cover; 
-height: 100%; 
-border-radius: 9999px; 
+.profileImage {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 9999px;
 }
 
-.profileImageNft{
-    object-fit: cover; 
-height: 100%; 
+.profileImageNft {
+  object-fit: cover;
+  height: 100%;
 }
 
-.profileImageMint{
-    padding-top: 0.25rem;
-padding-bottom: 0.25rem; 
-padding-left: 0.75rem;
-padding-right: 0.75rem; 
-background-color: #ffffff; 
-color: #000000; 
-border-radius: 9999px; 
+.profileImageMint {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 9999px;
 }
 
-.profileImageMint:hover{
-    background-color: #8899a6;
+.profileImageMint:hover {
+  background-color: #8899a6;
 }
 
-.nav{
-    display: flex; 
-margin-bottom: 0.5rem; 
-margin-top: 1rem; 
-font-size: 0.75rem;
-line-height: 1rem; 
-font-weight: 600; 
-justify-content: space-around; 
-color: #8899a6;
+.nav {
+  display: flex;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  justify-content: space-around;
+  color: #8899a6;
 }
 
-.activeNav{
-    color:#ffffff
+.activeNav {
+  color: #ffffff;
 }
 
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.innerHeader{
-position: sticky; 
-top: 0; 
-z-index: 10; 
-padding: 1rem; 
-display: flex; 
-justify-content: space-between; 
-align-items: center; 
-background-color: #15202b;
+.innerHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #15202b;
 }
 
-.headerTitle{
-    font-size: 1.25rem;
-line-height: 1.75rem; 
-font-weight: 700; 
+.headerTitle {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
-

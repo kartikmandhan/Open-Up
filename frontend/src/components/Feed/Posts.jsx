@@ -11,10 +11,20 @@ const Posts = () => {
     [selectedCategory],
     { live: true }
   );
-  const fetchedPosts = JSON.parse(
-    JSON.stringify(queryPost.data, ["postId", "contentId", "postOwner"])
+  let fetchedPosts = JSON.parse(
+    JSON.stringify(queryPost.data, [
+      "postId",
+      "contentId",
+      "postOwner",
+      "parentId",
+    ])
   ).reverse();
-
+  console.log(fetchedPosts);
+  fetchedPosts = fetchedPosts.filter(
+    (pst) =>
+      pst.parentId ===
+      "0x9100000000000000000000000000000000000000000000000000000000000000"
+  );
   const EmptyPost = () => (
     <div className="">
       <h3>Be the first one to post here for {selectedCategory.category} </h3>

@@ -1,5 +1,4 @@
-import { SocialContext } from "../context/SocialContext";
-import React, { useContext } from "react";
+import React from "react";
 import { useMoralisQuery } from "react-moralis";
 import Sidebar from "./Sidebar/Sidebar";
 import Post from "./Feed/Post";
@@ -10,9 +9,10 @@ const CommentPage = (props) => {
     JSON.stringify(queryCategories.data, ["categoryId", "category"])
   );
   const post = props.location.state;
+  console.log(post.postId);
   const queryPost = useMoralisQuery(
     "Posts",
-    (query) => query.equalTo("parentId", post?.parentId),
+    (query) => query.equalTo("parentId", post?.postId),
     [post],
     { live: true }
   );
@@ -36,11 +36,11 @@ const CommentPage = (props) => {
         <Sidebar categories={fetchedCategories} />
         <div style={{ flexDirection: "column" }}>
           <Post post={post} commentIconVisible={false} />
-          <PostInput parentId={post?.parentId} />
           {fetchedPosts?.length > 0 &&
             fetchedPosts.map((post) => (
               <Post key={post?.postId} post={post} commentIconVisible={false} />
             ))}
+          <PostInput parentId={post?.postId} isComment={true} />
         </div>
       </div>
     </div>

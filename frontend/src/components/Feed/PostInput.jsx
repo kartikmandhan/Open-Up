@@ -10,7 +10,7 @@ import { useMoralisFile } from "react-moralis";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import abi from "../../context/myABI.json";
 import { SocialContext } from "../../context/SocialContext";
-function PostInput({ parentId = "0x91" }) {
+function PostInput({ parentId = "0x91", isComment = false }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { selectedCategory } = useContext(SocialContext);
@@ -60,7 +60,7 @@ function PostInput({ parentId = "0x91" }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    if (!validateForm()) {
+    if (!validateForm() && !isComment) {
       return message.error(
         "Remember to add the title and the content of your post"
       );
@@ -71,36 +71,40 @@ function PostInput({ parentId = "0x91" }) {
   }
 
   return (
-    <div className="wrapper">
+    <div className="postInputWrapper">
       <div className="InputBoxLeft">
         <Blockie currentWallet scale={3} />
       </div>
-      <div className="InputBoxRight">
+      <div className="InputBoxRight ">
         <form>
-          <input
-            type="text"
-            className="inputField"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
+          {!isComment && (
+            <input
+              type="text"
+              className="inputField"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          )}
           <textarea
             type="text"
             className="inputField"
-            placeholder="What's Happening?.."
-            rows="3"
+            placeholder={isComment ? "Enter Comment..." : "What's Happening?.."}
+            rows={isComment ? "1" : "3"}
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
           <div className="formLowerContainer">
-            <div className="iconsContainer">
-              <BsCardImage className="icon" />
-              <RiFileGifLine className="icon" />
-              <RiBarChartHorizontalFill className="icon" />
-              <BsEmojiSmile className="icon" />
-              <IoMdCalendar className="icon" />
-              <MdOutlineLocationOn className="icon" />
-            </div>
+            {!isComment && (
+              <div className="iconsContainer">
+                <BsCardImage className="icon" />
+                <RiFileGifLine className="icon" />
+                <RiBarChartHorizontalFill className="icon" />
+                <BsEmojiSmile className="icon" />
+                <IoMdCalendar className="icon" />
+                <MdOutlineLocationOn className="icon" />
+              </div>
+            )}
             <button
               type="submit"
               className={`submitGeneral ${
