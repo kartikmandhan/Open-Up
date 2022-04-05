@@ -4,10 +4,12 @@ import { useHistory } from "react-router";
 import Blockie from "../Blockie";
 import "./profile.css";
 import { SocialContext } from "../../context/SocialContext";
+import { useMoralis } from "react-moralis";
 
 function ProfilePage() {
   const router = useHistory();
   const { account } = useContext(SocialContext);
+  const { user } = useMoralis();
   return (
     <div className="profileWrapper ">
       <div className="profileHeader">
@@ -15,7 +17,7 @@ function ProfilePage() {
           <BsArrowLeftShort />
         </div>
         <div className="px-3">
-          <div className="profilePrimary">Kartik Mandhan</div>
+          <div className="profilePrimary">{user?.getUsername()}</div>
           <div className="profileSecondary">4 Posts</div>
         </div>
       </div>
@@ -33,7 +35,7 @@ function ProfilePage() {
       </div>
       <div className="px-3">
         <div className="">
-          <div className="profilePrimary">Kartik Mandhan</div>
+          <div className="profilePrimary">{user?.getUsername()}</div>
         </div>
         <div className="profileSecondary">
           {account && `${account.slice(0, 8)}...${account.slice(-4)}`}

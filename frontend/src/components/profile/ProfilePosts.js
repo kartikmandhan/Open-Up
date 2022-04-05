@@ -1,3 +1,4 @@
+import { Skeleton } from "antd";
 import React, { useContext } from "react";
 import { useMoralisQuery } from "react-moralis";
 import { SocialContext } from "../../context/SocialContext";
@@ -5,19 +6,14 @@ import Post from "../Feed/Post";
 
 const ProfilePosts = () => {
   const { account } = useContext(SocialContext);
-  const queryPost = useMoralisQuery(
+  const { data, isFetching } = useMoralisQuery(
     "Posts",
     (query) => query.equalTo("postOwner", account),
     [account],
     { live: true }
   );
   let fetchedPosts = JSON.parse(
-    JSON.stringify(queryPost.data, [
-      "postId",
-      "contentId",
-      "postOwner",
-      "parentId",
-    ])
+    JSON.stringify(data, ["postId", "contentId", "postOwner", "parentId"])
   ).reverse();
   fetchedPosts = fetchedPosts.filter(
     (pst) =>
@@ -29,7 +25,9 @@ const ProfilePosts = () => {
       <h3>You have not created any posts yet </h3>
     </div>
   );
-  return (
+  return isFetching ? (
+    <Skeleton avatar actve paragraph={{ rows: 4 }} />
+  ) : (
     <div>
       {fetchedPosts.length > 0 ? (
         fetchedPosts.map((post) => (

@@ -3,56 +3,6 @@ import { useMoralisQuery } from "react-moralis";
 import Chatbox from "./Chatbox/Chatbox";
 import "./Discussions.css";
 function Discussions() {
-  const messages = [
-    {
-      name: "kartik",
-      received: true,
-      message: "hi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kasdfasdfartik",
-      received: false,
-      message: "hsdfdfi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kartik",
-      received: true,
-      message: "hi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kasdfasdfartik",
-      received: false,
-      message: "hsdfdfi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kartik",
-      received: true,
-      message: "hi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kasdfasdfartik",
-      received: false,
-      message: "hsdfdfi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kartik",
-      received: true,
-      message: "hi",
-      timestamp: "20 feb",
-    },
-    {
-      name: "kasdfasdfartik",
-      received: false,
-      message: "hsdfdfi",
-      timestamp: "20 feb",
-    },
-  ];
   const MIN_DURATION = 30;
   const { data, loading, error } = useMoralisQuery(
     "Messages",

@@ -3,10 +3,11 @@ import { useMoralisQuery } from "react-moralis";
 import Sidebar from "./Sidebar/Sidebar";
 import Post from "./Feed/Post";
 import PostInput from "./Feed/PostInput";
+import { Skeleton } from "antd";
 const CommentPage = (props) => {
-  const queryCategories = useMoralisQuery("Categories");
+  const { data, isFetching } = useMoralisQuery("Categories");
   const fetchedCategories = JSON.parse(
-    JSON.stringify(queryCategories.data, ["categoryId", "category"])
+    JSON.stringify(data, ["categoryId", "category"])
   );
   const post = props.location.state;
   console.log(post.postId);
@@ -36,10 +37,20 @@ const CommentPage = (props) => {
         <Sidebar categories={fetchedCategories} />
         <div style={{ flexDirection: "column" }}>
           <Post post={post} commentIconVisible={false} />
-          {fetchedPosts?.length > 0 &&
-            fetchedPosts.map((post) => (
-              <Post key={post?.postId} post={post} commentIconVisible={false} />
-            ))}
+          {isFetching ? (
+            <Skeleton avatar actve paragraph={{ rows: 4 }} />
+          ) : (
+            <div>
+              {fetchedPosts?.length > 0 &&
+                fetchedPosts.map((post) => (
+                  <Post
+                    key={post?.postId}
+                    post={post}
+                    commentIconVisible={false}
+                  />
+                ))}
+            </div>
+          )}
           <PostInput parentId={post?.postId} isComment={true} />
         </div>
       </div>
