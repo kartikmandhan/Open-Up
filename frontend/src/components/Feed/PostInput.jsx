@@ -5,7 +5,7 @@ import { IoMdCalendar } from "react-icons/io";
 import { MdOutlineLocationOn } from "react-icons/md";
 import Blockie from "../Blockie";
 import "./Feed.css";
-import { message } from "antd";
+import { message, Tooltip, notification } from "antd";
 import { useMoralisFile } from "react-moralis";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import abi from "../../context/myABI.json";
@@ -59,6 +59,7 @@ function PostInput({ parentId = "0x91", isComment = false }) {
   };
 
   function onSubmit(e) {
+    openNotification();
     e.preventDefault();
     if (!validateForm() && !isComment) {
       return message.error(
@@ -69,7 +70,18 @@ function PostInput({ parentId = "0x91", isComment = false }) {
     uploadPost({ title, content });
     clearForm();
   }
-
+  const openNotification = () => {
+    notification.open({
+      message: isComment ? "Comment Created" : "Post Created",
+      description:
+        "Complete Metamask transaction, and wait for the transaction to proceed",
+      style: {
+        background: "#15202B",
+        color: "#fff",
+      },
+      onClick: () => {},
+    });
+  };
   return (
     <div className="postInputWrapper">
       <div className="InputBoxLeft">
@@ -97,12 +109,14 @@ function PostInput({ parentId = "0x91", isComment = false }) {
           <div className="formLowerContainer">
             {!isComment && (
               <div className="iconsContainer">
-                <BsCardImage className="icon" />
-                <RiFileGifLine className="icon" />
-                <RiBarChartHorizontalFill className="icon" />
-                <BsEmojiSmile className="icon" />
-                <IoMdCalendar className="icon" />
-                <MdOutlineLocationOn className="icon" />
+                <Tooltip key="comming-soon" title="Coming Soon">
+                  <BsCardImage className="icon" />
+                  <RiFileGifLine className="icon" />
+                  <RiBarChartHorizontalFill className="icon" />
+                  <BsEmojiSmile className="icon" />
+                  <IoMdCalendar className="icon" />
+                  <MdOutlineLocationOn className="icon" />
+                </Tooltip>
               </div>
             )}
             <button

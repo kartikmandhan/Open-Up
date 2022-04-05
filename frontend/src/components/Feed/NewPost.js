@@ -3,10 +3,9 @@ import { BsFillPatchCheckFill } from "react-icons/bs";
 import { FaRegComment, FaRetweet } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiShare } from "react-icons/fi";
-import { format } from "timeago.js";
 import "./Feed.css";
 import Blockie from "../Blockie";
-import { useWeb3ExecuteFunction, useMoralisQuery } from "react-moralis";
+import { useMoralisQuery } from "react-moralis";
 import { useMoralis } from "react-moralis";
 import {
   DislikeOutlined,
@@ -14,7 +13,7 @@ import {
   DislikeFilled,
   LikeFilled,
 } from "@ant-design/icons";
-import { Comment, message, Tooltip } from "antd";
+import { message, Tooltip } from "antd";
 function Post({ post }) {
   const isProfileImageNft = false;
   const [postContent, setPostContent] = useState({
@@ -115,9 +114,7 @@ function Post({ post }) {
                 <BsFillPatchCheckFill />
               </span>
             )}
-            <span className="handleAndTimeAgo">
-              @{postOwner} • {format(new Date(timestamp).getTime())}
-            </span>
+            <span className="handleAndTimeAgo">@{postOwner}</span>
           </span>
           <div className="post">{postContent["content"]}</div>
         </div>
