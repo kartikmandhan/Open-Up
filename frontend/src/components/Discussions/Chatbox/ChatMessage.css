@@ -1,29 +1,30 @@
-.chatMessage{
-    position: relative;
-    font-size: 15px;
-    padding: 10px;
-    width: fit-content;
-    border-radius: 10px;
-    background-color: #10295080;
-    color: #cecaca;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    max-width: 75%;
+.chatMessage {
+  position: relative;
+  font-size: 15px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #10295080;
+  color: #cecaca;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
 }
-.chatTimestamp{
-    margin-left: 10px;
-    font-size: small;
-    text-align: end;
-    color: #1676f375;;
+.chatTimestamp {
+  margin-left: 10px;
+  font-size: small;
+  text-align: end;
+  color: #e9d985;
 }
-.chatName{
-    font-weight: 800;
-    color: #070bffa4;
-    margin-bottom: 10px;
+.chatName {
+  font-weight: 800;
+  margin-bottom: 10px;
 }
-.chatReciever{
-    margin-left: auto;
-    background-color: #102950;
-    
+.chatReciever {
+  margin-left: auto;
+  background-color: #222;
+}
+p {
+  color: #e9d985;
 }
