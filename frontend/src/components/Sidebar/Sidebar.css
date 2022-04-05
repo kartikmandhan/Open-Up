@@ -97,7 +97,6 @@
 }
 
 .textActive {
-  font: bold;
+  font-weight: bold;
   color: #fff;
-  background-color: #338cbc;
 }

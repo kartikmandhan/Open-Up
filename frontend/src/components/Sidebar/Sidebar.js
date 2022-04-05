@@ -1,7 +1,12 @@
 import React, { useState, useContext } from "react";
 import { CgMoreO } from "react-icons/cg";
 import SidebarOption from "./SidebarOption";
-import { BsPerson, BsPersonFill } from "react-icons/bs";
+import {
+  BsPerson,
+  BsPersonFill,
+  BsChatLeftDots,
+  BsChatLeftDotsFill,
+} from "react-icons/bs";
 import "./Sidebar.css";
 import { FaHashtag } from "react-icons/fa";
 import { BiHash } from "react-icons/bi";
@@ -41,7 +46,15 @@ function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
           setSelected={setSelected}
           redirect={"/profile"}
         />
-        <SidebarOption Icon={CgMoreO} text="More" />
+        <SidebarOption
+          Icon={
+            selected === "Discussions" ? BsChatLeftDotsFill : BsChatLeftDots
+          }
+          text="Discussions"
+          isActive={Boolean(selected === "Discussions")}
+          setSelected={setSelected}
+          redirect={"/discussions"}
+        />
         <div className="Button">Mint</div>
       </div>
       <div className="profileButton">

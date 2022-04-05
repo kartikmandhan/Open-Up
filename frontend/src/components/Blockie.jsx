@@ -5,7 +5,7 @@ import { useMoralis } from "react-moralis";
 function Blockie(props) {
   const { account, isAuthenticated } = useMoralis();
   if (!props.address && (!account || !isAuthenticated))
-    return <Skeleton.Avatar active size={40} />;
+    return <Skeleton.Avatar active size={props.size ? props.size : 40} />;
 
   return (
     <Blockies

@@ -8,6 +8,7 @@ import "./style.css";
 import Discussions from "./components/Discussions/Discussions";
 import Main from "./components/Main";
 import CommentPage from "./components/CommentPage";
+import Profile from "./components/profile/Profile";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
@@ -87,6 +88,7 @@ function App() {
                   </div>
                 )}
               />
+              <Route path="/profile" exact component={(props) => <Profile />} />
             </>
           ) : (
             <Route path="/">

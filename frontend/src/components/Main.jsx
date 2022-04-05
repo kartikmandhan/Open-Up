@@ -1,15 +1,9 @@
 import { SocialContext } from "../context/SocialContext";
 import React, { useContext } from "react";
-import { useMoralisQuery } from "react-moralis";
-import Categories from "./Categories";
 import { Feed } from "./Feed";
 import Sidebar from "./Sidebar/Sidebar";
 const Main = () => {
-  const queryCategories = useMoralisQuery("Categories");
-  const fetchedCategories = JSON.parse(
-    JSON.stringify(queryCategories.data, ["categoryId", "category"])
-  );
-  console.log(fetchedCategories);
+  const { fetchedCategories } = useContext(SocialContext);
   return (
     <div className="container">
       <div
