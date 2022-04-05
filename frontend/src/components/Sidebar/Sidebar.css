@@ -24,9 +24,9 @@
   padding: 0.4rem;
   margin-top: 1.4rem;
 }
-/* .Button:hover {
+.Button:hover {
   background-color: #1b8cd8;
-} */
+}
 
 .profileLeft {
   display: flex;
