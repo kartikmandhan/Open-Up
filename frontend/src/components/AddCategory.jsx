@@ -65,7 +65,7 @@ function AddCategory() {
         _category: values.title,
       },
     };
-    console.log(options);
+    // console.log(options);
     await contractProcessor.fetch({
       params: options,
       onSuccess: () => {

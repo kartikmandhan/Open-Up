@@ -16,6 +16,7 @@ import Account from "../Account/Account";
 import ChangeUsername from "../ChangeUsername";
 import { useMoralis } from "react-moralis";
 import AddCategory from "../AddCategory";
+import Reputation from "../Reputation";
 function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
   const [selected, setSelected] = useState(initialSelectedIcon);
   const { setSelectedCategory } = useContext(SocialContext);

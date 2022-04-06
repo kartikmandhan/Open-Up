@@ -18,7 +18,7 @@ function SidebarOption({
         isActive ? " innerWrapper textActive" : " innerWrapper textGeneral"
       }
       onClick={() => {
-        console.log(text);
+        // console.log(text);
         if (redirect) router.push(redirect);
         if (selectCategory) {
           selectCategory(id);

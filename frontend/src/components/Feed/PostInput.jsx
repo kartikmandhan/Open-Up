@@ -75,10 +75,6 @@ function PostInput({ parentId = "0x91", isComment = false }) {
       message: isComment ? "Comment Created" : "Post Created",
       description:
         "Complete Metamask transaction, and wait for the transaction to proceed",
-      style: {
-        background: "#15202B",
-        color: "#fff",
-      },
       onClick: () => {},
     });
   };

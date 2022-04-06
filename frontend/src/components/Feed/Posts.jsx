@@ -15,7 +15,7 @@ const Posts = () => {
   let fetchedPosts = JSON.parse(
     JSON.stringify(data, ["postId", "contentId", "postOwner", "parentId"])
   ).reverse();
-  console.log(fetchedPosts);
+  // console.log(fetchedPosts);
   fetchedPosts = fetchedPosts.filter(
     (pst) =>
       pst.parentId ===

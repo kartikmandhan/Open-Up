@@ -38,7 +38,7 @@ const AddPost = () => {
         _categoryId: selectedCategory.categoryId,
       },
     };
-    console.log(options);
+    // console.log(options);
     await contractProcessor.fetch({
       params: options,
       onSuccess: () => message.success("success"),
@@ -60,7 +60,7 @@ const AddPost = () => {
         "Remember to add the title and the content of your post"
       );
     }
-    console.log(title, content);
+    // console.log(title, content);
     uploadPost({ title, content });
     clearForm();
   }

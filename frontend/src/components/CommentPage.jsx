@@ -18,7 +18,7 @@ const CommentPage = (props) => {
   );
   const fetchedPosts = JSON.parse(
     JSON.stringify(queryPost.data, ["postId", "contentId", "postOwner"])
-  ).reverse();
+  );
   return (
     <div className="container">
       <div

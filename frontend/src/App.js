@@ -63,7 +63,7 @@ function App() {
       enableWeb3({ provider: connectorId });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
-  console.log(isAuthenticated);
+  // console.log(isAuthenticated);
   return (
     <Layout style={{ height: "100%", overflow: "auto" }}>
       <Router>
