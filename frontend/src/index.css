@@ -25,7 +25,10 @@ dl,
 dd {
   margin: 0;
 }
-
+.ant-layout {
+  background-color: #15202b;
+  color: white;
+}
 body {
   min-height: 100vh;
   scroll-behavior: smooth;

@@ -10,7 +10,7 @@ import {
 import "./Sidebar.css";
 import { FaHashtag } from "react-icons/fa";
 import { BiHash } from "react-icons/bi";
-
+import logo from "../../assets/logo.png";
 import { SocialContext } from "../../context/SocialContext";
 import Account from "../Account/Account";
 import ChangeUsername from "../ChangeUsername";
@@ -27,21 +27,10 @@ function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
   const { user } = useMoralis();
   return (
     <div className="wrapper">
-      <div className="iconContainer">Open UP</div>
+      <div className="iconContainer">
+        <img src={logo} alt="Open Up" />
+      </div>
       <div className="navContainer">
-        <div className="name">Categories</div>
-        {categories.map((category) => (
-          <SidebarOption
-            Icon={selected === category.category ? FaHashtag : BiHash}
-            key={category.categoryId}
-            text={category.category}
-            id={category.categoryId}
-            isActive={Boolean(selected === category.category)}
-            setSelected={setSelected}
-            selectCategory={selectCategory}
-            redirect={"/"}
-          />
-        ))}
         <SidebarOption
           Icon={selected === "Profile" ? BsPersonFill : BsPerson}
           text="Profile"
@@ -58,6 +47,19 @@ function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
           setSelected={setSelected}
           redirect={"/discussions"}
         />
+        <div className="name">Categories</div>
+        {categories.map((category) => (
+          <SidebarOption
+            Icon={selected === category.category ? FaHashtag : BiHash}
+            key={category.categoryId}
+            text={category.category}
+            id={category.categoryId}
+            isActive={Boolean(selected === category.category)}
+            setSelected={setSelected}
+            selectCategory={selectCategory}
+            redirect={"/"}
+          />
+        ))}
         <div className="Button">
           <ChangeUsername />
         </div>

@@ -9,15 +9,17 @@ import Discussions from "./components/Discussions/Discussions";
 import Main from "./components/Main";
 import CommentPage from "./components/CommentPage";
 import Profile from "./components/profile/Profile";
+import logo from "./assets/logo.png";
+import hero from "./assets/hero.svg";
 const { Header, Footer } = Layout;
 const styles = {
   content: {
     display: "flex",
     justifyContent: "center",
     fontFamily: "Roboto, sans-serif",
-    color: "#041836",
-    marginTop: "130px",
     padding: "10px",
+    backgroundColor: "#15202b",
+    color: "white",
   },
   header: {
     position: "fixed",
@@ -31,6 +33,8 @@ const styles = {
     borderBottom: "2px solid rgba(0, 0, 0, 0.06)",
     padding: "0 10px",
     boxShadow: "0 1px 10px rgb(151 164 175 / 10%)",
+    backgroundColor: "#15202b",
+    color: "white",
   },
   headerRight: {
     display: "flex",
@@ -38,6 +42,7 @@ const styles = {
     alignItems: "center",
     fontSize: "15px",
     fontWeight: "600",
+    marginRight: "20px",
   },
   wrapper: {
     display: "flex",
@@ -93,15 +98,61 @@ function App() {
           ) : (
             <Route path="/">
               <Header style={styles.header}>
-                <h4>OPEN-UP</h4>
+                <div>
+                  <img
+                    className="img-fluid"
+                    style={{ width: "9rem" }}
+                    src={logo}
+                    alt="logo"
+                  />
+                </div>
                 <div style={styles.headerRight}>
                   <Account />
                 </div>
               </Header>
-              <div style={styles.content}>
-                <h3>Please login using the "Authenticate" button</h3>
+              <img
+                className="img-fluid"
+                style={{
+                  width: "600px",
+                  height: "600px",
+                  position: "absolute",
+                  right: "5%",
+                  top: "20%",
+                }}
+                src={hero}
+                alt="hero"
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  left: "5%",
+                  top: "20%",
+                }}
+              >
+                <img
+                  className="img-fluid"
+                  style={{
+                    height: "300px",
+                  }}
+                  src={logo}
+                  alt="logo"
+                />
+                <h3 style={{ color: "#55C096" }}>
+                  A place where{" "}
+                  <span style={{ color: "#E9D985" }}>"What?"</span> matters more
+                  than <span style={{ color: "#E9D985" }}>"Who?"</span>
+                </h3>
               </div>
-              <Footer style={{ textAlign: "center" }}>
+
+              <Footer
+                style={{
+                  backgroundColor: "#15202b",
+                  color: "white",
+                  position: "absolute",
+                  bottom: "5%",
+                  left: "36%",
+                }}
+              >
                 Copyright 111903039 111903023
               </Footer>
             </Route>

@@ -31,8 +31,8 @@ function NewsFeed() {
         }}
       >
         <Avatar src={<Blockie currentWallet />} />
-        <h4>
-          Your Reputation in {selectedCategory?.category} is {<Reputation />}
+        <h4 style={{ color: "#eee" }}>
+          Reputation in {selectedCategory?.category} : {<Reputation />}
         </h4>
       </div>
       <PostInput />
