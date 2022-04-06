@@ -24,7 +24,16 @@ const Posts = () => {
   const EmptyPost = () => (
     <div className="">
       <h3>Be the first one to post here for {selectedCategory.category} </h3>
-      <img src={nopost} alt="" height="230" width="188"></img>
+      <img
+        src={nopost}
+        alt=""
+        style={{
+          width: "400px",
+          objectFit: "contain",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      ></img>
     </div>
   );
   return isFetching ? (
