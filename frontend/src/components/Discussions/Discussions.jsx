@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useMoralisQuery } from "react-moralis";
 import Chatbox from "./Chatbox/Chatbox";
 import "./Discussions.css";
 function Discussions() {
   const MIN_DURATION = 30;
-  const { data, loading, error } = useMoralisQuery(
+  const { data } = useMoralisQuery(
     "Messages",
     (query) =>
       query

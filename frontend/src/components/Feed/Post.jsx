@@ -29,7 +29,7 @@ const Post = ({ post, commentIconVisible }) => {
     query.equalTo("contentId", contentId)
   );
   //   wallet address
-  const { account, user } = useMoralis();
+  const { account } = useMoralis();
   const { data: votes } = useMoralisQuery(
     "Votes",
     (query) => query.equalTo("postId", postId),

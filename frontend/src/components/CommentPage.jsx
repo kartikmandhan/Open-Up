@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMoralisQuery } from "react-moralis";
 import Sidebar from "./Sidebar/Sidebar";
 import Post from "./Feed/Post";

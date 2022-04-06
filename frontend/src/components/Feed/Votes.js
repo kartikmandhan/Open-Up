@@ -30,6 +30,7 @@ function Votes({ postId }) {
       setPostVotes(result[3]);
     }
     getPostVotes();
+    // eslint-disable-next-line
   }, [data]);
 
   return <>{postVotes}</>;

@@ -104,7 +104,9 @@ function Account() {
                 }}
               >
                 <img src={icon} alt={title} style={styles.icon} />
-                <Text style={{ fontSize: "14px" }}>{title}</Text>
+                <Text style={{ fontSize: "14px", color: "white" }}>
+                  {title}
+                </Text>
               </div>
             ))}
           </div>

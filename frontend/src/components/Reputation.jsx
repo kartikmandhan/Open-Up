@@ -38,6 +38,7 @@ const Reputation = () => {
     }
 
     getReputation();
+    // eslint-disable-next-line
   }, [votes, account, categoryId]);
 
   return <>{reputationValue}</>;
