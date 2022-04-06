@@ -15,6 +15,7 @@ import { SocialContext } from "../../context/SocialContext";
 import Account from "../Account/Account";
 import ChangeUsername from "../ChangeUsername";
 import { useMoralis } from "react-moralis";
+import AddCategory from "../AddCategory";
 function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
   const [selected, setSelected] = useState(initialSelectedIcon);
   const { setSelectedCategory } = useContext(SocialContext);
@@ -62,6 +63,9 @@ function Sidebar({ categories, initialSelectedIcon = "Web3" }) {
         ))}
         <div className="Button">
           <ChangeUsername />
+        </div>
+        <div className="Button disabled">
+          <AddCategory />
         </div>
       </div>
       <div className="profileButton">

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { useMoralisQuery } from "react-moralis";
 import { SocialContext } from "../../context/SocialContext";
 import Post from "./Post";
-
+import nopost from "../../assets/nopost.png";
 const Posts = () => {
   const { selectedCategory } = useContext(SocialContext);
   const { data, isFetching } = useMoralisQuery(
@@ -24,6 +24,7 @@ const Posts = () => {
   const EmptyPost = () => (
     <div className="">
       <h3>Be the first one to post here for {selectedCategory.category} </h3>
+      <img src={nopost} alt="" height="230" width="188"></img>
     </div>
   );
   return isFetching ? (
