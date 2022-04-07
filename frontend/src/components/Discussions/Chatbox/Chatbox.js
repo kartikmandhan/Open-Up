@@ -68,9 +68,6 @@ function Chatbox({ messages }) {
           </div>
         </div>
         <div className="chatFooter">
-          {/* <IconButton>
-          <InsertEmoticonIcon /> */}
-          {/* </IconButton> */}
           <input
             value={message}
             onChange={(e) => setMessage(e.target.value)}

@@ -71,12 +71,6 @@ function App() {
           {isAuthenticated ? (
             <>
               <Route path="/" exact>
-                {/* <Header style={styles.header}>
-                  <h4>OPEN-UP</h4>
-                  <div style={styles.headerRight}>
-                    <Account />
-                  </div>
-                </Header> */}
                 <div style={styles.wrapper}>
                   <Main />
                 </div>
