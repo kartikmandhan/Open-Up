@@ -10,7 +10,7 @@ import Blockie from "../Blockie";
 function NewsFeed() {
   const { selectedCategory } = useContext(SocialContext);
   return (
-    <div className="outerWrapper">
+    <div className="outerWrapper no-scrollbar">
       <div className="header">
         <div className="headerTitle">{selectedCategory.category}</div>
         <BsStars />
