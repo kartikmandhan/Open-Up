@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/kartikmandhan.github.io/Open-Up/static/css/main.8d57f54c.chunk.css",
+    "main.js": "/kartikmandhan.github.io/Open-Up/static/js/main.d0273cf1.chunk.js",
+    "main.js.map": "/kartikmandhan.github.io/Open-Up/static/js/main.d0273cf1.chunk.js.map",
+    "runtime-main.js": "/kartikmandhan.github.io/Open-Up/static/js/runtime-main.c71933df.js",
+    "runtime-main.js.map": "/kartikmandhan.github.io/Open-Up/static/js/runtime-main.c71933df.js.map",
+    "static/css/2.b33dce22.chunk.css": "/kartikmandhan.github.io/Open-Up/static/css/2.b33dce22.chunk.css",
+    "static/js/2.85ea0d0a.chunk.js": "/kartikmandhan.github.io/Open-Up/static/js/2.85ea0d0a.chunk.js",
+    "static/js/2.85ea0d0a.chunk.js.map": "/kartikmandhan.github.io/Open-Up/static/js/2.85ea0d0a.chunk.js.map",
+    "index.html": "/kartikmandhan.github.io/Open-Up/index.html",
+    "static/css/2.b33dce22.chunk.css.map": "/kartikmandhan.github.io/Open-Up/static/css/2.b33dce22.chunk.css.map",
+    "static/css/main.8d57f54c.chunk.css.map": "/kartikmandhan.github.io/Open-Up/static/css/main.8d57f54c.chunk.css.map",
+    "static/js/2.85ea0d0a.chunk.js.LICENSE.txt": "/kartikmandhan.github.io/Open-Up/static/js/2.85ea0d0a.chunk.js.LICENSE.txt",
+    "static/media/Coin98.1e4e4073.png": "/kartikmandhan.github.io/Open-Up/static/media/Coin98.1e4e4073.png",
+    "static/media/MathWallet.19212234.svg": "/kartikmandhan.github.io/Open-Up/static/media/MathWallet.19212234.svg",
+    "static/media/SafePal.3348bc46.svg": "/kartikmandhan.github.io/Open-Up/static/media/SafePal.3348bc46.svg",
+    "static/media/TokenPocket.0ba48742.svg": "/kartikmandhan.github.io/Open-Up/static/media/TokenPocket.0ba48742.svg",
+    "static/media/hero.5fab134b.svg": "/kartikmandhan.github.io/Open-Up/static/media/hero.5fab134b.svg",
+    "static/media/logo.580cc57a.png": "/kartikmandhan.github.io/Open-Up/static/media/logo.580cc57a.png",
+    "static/media/nopost.30e97584.png": "/kartikmandhan.github.io/Open-Up/static/media/nopost.30e97584.png",
+    "static/media/wallet-connect.304e3277.svg": "/kartikmandhan.github.io/Open-Up/static/media/wallet-connect.304e3277.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c71933df.js",
+    "static/css/2.b33dce22.chunk.css",
+    "static/js/2.85ea0d0a.chunk.js",
+    "static/css/main.8d57f54c.chunk.css",
+    "static/js/main.d0273cf1.chunk.js"
+  ]
+}
